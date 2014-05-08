@@ -1,0 +1,14 @@
+LINT for EAGLE XML Files
+========================
+
+This project aims to check eagle files for good style. It checks that you use eagle in a sane way instead stressing your luck and hoping that everything will be ok.
+
+Installation
+============
+
+TBD
+
+Usage
+=====
+
+TBD

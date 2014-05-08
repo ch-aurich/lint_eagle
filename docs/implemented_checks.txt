@@ -1,0 +1,32 @@
+Checks that are implemented in lint_eagle
+-----------------------------------------
+
+ERRORS
+~~~~~~
+E1: the text ">NAME" is not included in your symbol or package (TODO, test existing)
+E2: ">NAME" is not in layer tName / Names (TODO, test existing)
+E3: ">VALUE" is not in layer tValue / Values (TODO, test existing)
+E4: unrouted connections (TODO, test existing)
+E5: not closed dimension drawing (TODO)
+
+WARNINGS
+~~~~~~~~
+W1: the text ">VALUE" is not included in your symbol or package (TODO, test existing)
+W2: the device has no prefix (TODO)
+W3: a wire changes thickness at a point in the middle of the wire (TODO, test existing)
+W4: too many different drill diameters (TODO)
+W5: too many different wire thicknesses (TODO)
+W5: "unround" measures (i.e. 24.2001 mm) (TODO)
+W6: too many segments in dimension (TODO)
+W6: too many parts per schematic sheet (TODO)
+W7: too many signals per schematic sheet (TODO)
+W8: unnamed signals (TODO)
+W9: unusual layer assignments (only default layers) (TODO)
+W10:milling layer is used (most manufacturers do not notice this layer) (TODO)
+
+STATISTICS
+~~~~~~~~~~
+S1: number of signals (TODO)
+S2: number of drill diameters (TODO)
+S3: number of segments in dimension (TODO)
+S4: number of parts (TODO)
