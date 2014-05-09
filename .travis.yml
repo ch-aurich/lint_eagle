@@ -18,4 +18,4 @@ before_install:
 # command to run tests
 script: 
   - pylint lint_eagle
-  - nosetests test/
+  - nosetests tests/
