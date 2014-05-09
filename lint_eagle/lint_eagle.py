@@ -1,7 +1,7 @@
 from lxml import objectify
 import argparse
 import eagle_lbr
-import helper
+#import helper
 import sys
 
 #TODO: state contains a list of issues structured like that: $object_name(str), $object_type(component, symbol, package, library, schematic, board, etc.), $issue_type(E1, E2, E3, W1...)
@@ -16,11 +16,11 @@ group.add_argument("-q", "--quiet", action="store_true", default=0,help="quiet")
 parser.add_argument('file', action="store", nargs='+', type=argparse.FileType('r'))
 
 args = parser.parse_args(sys.argv[1:])
-print (args)
+#print (args)
 
 
-
-#f = open('test/testfiles/test.lbr', 'r')
-#eagle_xml_string = f.read()
-#eagle_object = objectify.fromstring(eagle_xml_string)
-#lbr_check_name_and_value(eagle_object)
+for file_handle in args.file:
+  print ("testing file: " + str(file_handle.name))
+  eagle_xml_string = file_handle.read()
+  eagle_object = objectify.fromstring(eagle_xml_string)
+  eagle_lbr.lbr_check_name_and_value(eagle_object)
