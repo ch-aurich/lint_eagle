@@ -4,6 +4,8 @@ import eagle_lbr
 #import helper
 import sys
 
+import lint_framework
+
 #TODO: state contains a list of issues structured like that: $object_name(str), $object_type(component, symbol, package, library, schematic, board, etc.), $issue_type(E1, E2, E3, W1...)
 
 
@@ -20,7 +22,13 @@ args = parser.parse_args(sys.argv[1:])
 
 
 for file_handle in args.file:
+  issues = []
   print ("testing file: " + str(file_handle.name))
   eagle_xml_string = file_handle.read()
   eagle_object = objectify.fromstring(eagle_xml_string)
-  eagle_lbr.lbr_check_name_and_value(eagle_object)
+
+  issues += eagle_lbr.lbr_check_name_and_value_package(eagle_object, args)
+
+  print "\n"
+  for issue in issues:
+    print(issue)
