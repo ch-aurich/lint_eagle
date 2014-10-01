@@ -24,13 +24,12 @@ args = parser.parse_args(sys.argv[1:])
 
 for file_handle in args.file:
   issues = []
-  print ("testing file: " + str(file_handle.name))
+  
   eagle_xml_string = file_handle.read()
   eagle_object = objectify.fromstring(eagle_xml_string)
 
   issues += eagle_lbr.lbr_check_name_and_value_package(eagle_object, args)
   issues += eagle_brd.brd_check_testpad_on_all_nets(eagle_object, args)
-
-  print "\n"
+  print ("testing file: \"" + str(file_handle.name) + "\"\n")
   for issue in issues:
-    print(issue)
+    print("\t" + str(issue))
