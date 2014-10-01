@@ -1,6 +1,7 @@
 from lxml import objectify
 import argparse
 import eagle_lbr
+import eagle_brd
 #import helper
 import sys
 
@@ -28,6 +29,7 @@ for file_handle in args.file:
   eagle_object = objectify.fromstring(eagle_xml_string)
 
   issues += eagle_lbr.lbr_check_name_and_value_package(eagle_object, args)
+  issues += eagle_brd.brd_check_testpad_on_all_nets(eagle_object, args)
 
   print "\n"
   for issue in issues:

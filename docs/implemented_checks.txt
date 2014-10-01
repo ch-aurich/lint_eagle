@@ -16,7 +16,7 @@ E10: not closed dimension drawing (TODO)
 
 WARNINGS
 ~~~~~~~~
-W2: the device has no prefix (TODO)
+W2: the device has no prefix, library (TODO)
 W3: a wire changes thickness at a point in the middle of the wire (TODO)
 W4: too many different drill diameters (TODO)
 W5: too many different wire thicknesses (TODO)
@@ -27,6 +27,7 @@ W7: too many signals per schematic sheet (TODO)
 W8: unnamed signals (TODO)
 W9: unusual layer assignments (only default layers) (TODO)
 W10:milling layer is used (most manufacturers do not notice this layer) (TODO)
+W11: not all nets have a test pad (TODO, applicable for schematic and board)
 
 STATISTICS
 ~~~~~~~~~~
