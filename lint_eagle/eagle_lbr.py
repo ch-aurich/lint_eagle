@@ -2,6 +2,11 @@ import lint_framework
 
 def lbr_check_name_and_value_package(eagle_object, settings):
   issues = []
+
+  #abort if eagle object is not a library
+  if eagle_object.drawing.find("library") == None:
+    return issues
+
   library = eagle_object.drawing.library
   for package in library.packages.package:
     value_found = False
