@@ -31,4 +31,4 @@ def lbr_check_name_and_value_package(eagle_object, settings):
       
     #TODO: check for correct layers; does this need to be done based on the layer definitions in the file?
 
-    return issues
+  return issues
