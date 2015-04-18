@@ -16,7 +16,7 @@ group = parser.add_mutually_exclusive_group()
 group.add_argument("-v", "--verbose", action="count", default=0,help="increase output verbosity")
 group.add_argument("-q", "--quiet", action="store_true", default=0,help="quiet")
 
-parser.add_argument('file', action="store", nargs='+', type=argparse.FileType('r'))
+parser.add_argument('file', action="store", nargs='+', type=argparse.FileType('rb'))
 
 args = parser.parse_args(sys.argv[1:])
 #print (args)
