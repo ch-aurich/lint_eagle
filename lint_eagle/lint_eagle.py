@@ -33,3 +33,8 @@ for file_handle in args.file:
   print ("testing file: \"" + str(file_handle.name) + "\"\n")
   for issue in issues:
     print("\t" + str(issue))
+
+if issues == []:
+  sys.exit(0)
+else:
+  sys.exit(1)
