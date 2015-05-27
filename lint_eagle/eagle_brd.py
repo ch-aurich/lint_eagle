@@ -20,9 +20,10 @@ def brd_check_testpad_on_all_nets(eagle_object, settings):
   signals_on_brd = eagle_object.drawing.board.signals
   for signal in signals_on_brd.signal:
     signal_contains_testpad = False
-    for contactref in signal.contactref:
-      if contactref.get('element') in testpads:
-        signal_contains_testpad = True
+    if("contactref" in signal):
+      for contactref in signal.contactref:
+        if contactref.get('element') in testpads:
+          signal_contains_testpad = True
 
     if not signal_contains_testpad:
       issues.append(lint_framework.lint_issue("W", 11, "signal " + signal.get("name"), "the signal does not contain a testpad"))
